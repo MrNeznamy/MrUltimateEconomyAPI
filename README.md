@@ -13,9 +13,9 @@
 </repository>
 
 <dependency>
-    <groupId>eu.mrneznamy</groupId>
-    <artifactId>mrultimateeconomy-api</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <groupId>com.github.MrNeznamy</groupId>
+    <artifactId>MrUltimateEconomyAPI</artifactId>
+    <version>84c8a7c1b1</version>
     <scope>provided</scope>
 </dependency>
 ```
@@ -23,12 +23,17 @@
 
 ### You can access the API using the static instance:
 ```java
+
+//Class 
+import eu.mrneznamy.mrultimateeconomy.api.MrUltimateEconomyAPI;
+//Get Instance
 MrUltimateEconomyAPI api = MrUltimateEconomyAPI.getInstance();
 
 if (api == null) {
     // MrUltimateEconomy plugin is not loaded
     return;
 }
+
 OfflinePlayer player = Bukkit.getOfflinePlayer("Notch");
 
 // Get balance
