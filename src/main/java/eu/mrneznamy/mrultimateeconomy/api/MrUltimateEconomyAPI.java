@@ -6,6 +6,7 @@ import org.bukkit.OfflinePlayer;
  * Developer API for MrUltimateEconomy.
  * <p>
  * To use this API, add the dependency to your pom.xml:
+ * More info in readme.md
  */
 public abstract class MrUltimateEconomyAPI {
 
