@@ -1,5 +1,4 @@
 # MrUltimateEconomyAPI
-## 🛠️ Developer API
 
 ### Maven Dependency
 
@@ -26,11 +25,42 @@
 ```java
 MrUltimateEconomyAPI api = MrUltimateEconomyAPI.getInstance();
 
-// Get player balance
-double balance = api.getBalance(player, "dollar");
+if (api == null) {
+    // MrUltimateEconomy plugin is not loaded
+    return;
+}
+OfflinePlayer player = Bukkit.getOfflinePlayer("Notch");
 
-// Modify balance
-api.give(player, "dollar", 100.0);
-api.take(player, "dollar", 50.0);
-api.set(player, "dollar", 1000.0);
+// Get balance
+double balance = api.getBalance(player, "dollars");
+
+// Give money
+api.give(player, "dollars", 100.0);
+
+// Take money
+api.take(player, "dollars", 50.0);
+
+// Set exact balance
+api.set(player, "dollars", 1000.0);
+
+// Alias for take()
+api.withdraw(player, "dollars", 25.0);
+
+OfflinePlayer player = Bukkit.getOfflinePlayer("Notch");
+
+// Give money using Vault currency
+api.giveVault(player, 200.0);
+
+// Withdraw money using Vault currency
+api.withdrawVault(player, 75.0);
+
+// Get Vault currency name
+String vaultCurrency = api.getVaultCurrencyName();
+
+List<String> currencies = api.getCurrencies();
+
+for (String currency : currencies) {
+    System.out.println("Registered currency: " + currency);
+}
+
 ```
